@@ -8,7 +8,7 @@ weights =  [[0.2, 0.8, -0.5, 1.0],
 biases = [2, 3, 0.5]
 
 #  Add biases to the dot products
-layer_outputs = np.dot(weights, inputs) + biases
+layer_outputs = np.dot(inputs, np.array(weights).T) + biases
 
 
 print(layer_outputs)
