@@ -12,4 +12,4 @@ class Layer_Dense:
     # Forward pass
     def forward(self, inputs):
         # Calculate output values from inputs, weights and biases
-        pass
+        self.outputs = np.dot(inputs, self.weights) + self.biases
