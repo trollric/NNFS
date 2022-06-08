@@ -18,3 +18,12 @@ log_num = np.log(num)
 
 print('''Testing log({}) = {}. \n
     e ** num = {}'''.format(num, log_num, math.e**log_num))
+
+softmax_output = [  [0.7, 0.1, 0.2],
+                    [0.1, 0.5, 0.4],
+                    [0.02, 0.9, 0.08]]
+
+class_targets =[0, 1, 1]
+
+for target_index, distribution in zip(class_targets, softmax_output):
+    print(distribution[target_index])
