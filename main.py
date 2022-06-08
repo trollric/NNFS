@@ -4,6 +4,7 @@ from nnfs.datasets import spiral_data
 from dense_layer import Layer_Dense
 import matplotlib.pyplot as plt
 import activation_functions as af
+import loss_calulations as loss_calcs
 
 nnfs.init()
 
@@ -39,3 +40,12 @@ activation2.forward(dense2.output)
 
 # Print the first few samples
 print(activation2.output[:5])
+
+# Perform a forward pass through activation function
+# it takes the output of the second dense layer here and returns the loss
+
+loss_function = loss_calcs.Loss_CategoricalCrossentrophy()
+loss = loss_function.calculate(activation2.output, y)
+
+# Print the loss value
+print(f'loss: {loss}')
