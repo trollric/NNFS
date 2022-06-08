@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import loss_calulations as loss_calcs
 
 # An example output from the out layer of the neural network
 softmax_example_output = [0.7, 0.1, 0.2]
@@ -83,3 +84,8 @@ neg_log = -np.log(correct_confidences)
 
 average_loss = np.mean(neg_log)
 print(average_loss)
+
+print('now with the loss class')
+loss_function = loss_calcs.Loss_CategoricalCrossentrophy()
+loss = loss_function.calculate(softmax_output, class_targets)
+print(loss)
