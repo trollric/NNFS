@@ -39,3 +39,18 @@ class_targets =[0, 1, 1]
 print(softmax_output[[0, 1, 2], class_targets])
 
 print(softmax_output[range(len(softmax_output)), class_targets])
+
+print('now lets calculate the loss for each indidual prediction')
+
+print(-np.log(softmax_output[
+    range(len(softmax_output)), class_targets
+]))
+
+print('Now lets print the average loss')
+
+neg_log = -np.log(softmax_output[
+    range(len(softmax_output)), class_targets
+])
+
+average_loss = np.mean(neg_log)
+print(average_loss)
