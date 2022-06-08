@@ -37,3 +37,5 @@ softmax_output = np.array([  [0.7, 0.1, 0.2],
 class_targets =[0, 1, 1]
 
 print(softmax_output[[0, 1, 2], class_targets])
+
+print(softmax_output[range(len(softmax_output)), class_targets])
